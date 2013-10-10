@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests" thread-count="2" preserve-order="false">
+  <listeners>
+    <listener class-name="demo.CustomListener" />
+  </listeners>
+  
+  
+ <test name="Test ie10 windows 7">
+  <parameter name="test-title"  value="ie 10"/>
+  <parameter name="browser-name"  value="internet explorer"/>
+  <parameter name="platform-name"  value="WIN7"/>
+  <parameter name="browser-version-name"  value="10"/>
+   <classes> 
+      <class name="demo.test" />   
+    </classes>
+  </test>  
+ 
+   
+
+   <test name="Test ie10 windows 8">
+  <parameter name="test-title"  value="ie 10"/>
+  <parameter name="browser-name"  value="internet explorer"/>
+  <parameter name="platform-name"  value="WIN8"/>
+  <parameter name="browser-version-name"  value="10"/>
+   <classes> 
+      <class name="demo.test" />   
+    </classes>
+  </test>
+  
+ 
+  
+</suite>
