@@ -17,11 +17,11 @@
  
    
 
-   <test name="Test ie10 windows 8">
-  <parameter name="test-title"  value="ie 10"/>
-  <parameter name="browser-name"  value="internet explorer"/>
-  <parameter name="platform-name"  value="WIN8"/>
-  <parameter name="browser-version-name"  value="10"/>
+   <test name="Test chrome windows 7">
+  <parameter name="test-title"  value="chrome"/>
+  <parameter name="browser-name"  value="chrome"/>
+  <parameter name="platform-name"  value="WIN7"/>
+  <parameter name="browser-version-name"  value=""/>
    <classes> 
       <class name="demo.test" />   
     </classes>
