@@ -20,8 +20,11 @@ public class CustomListener extends TestListenerAdapter{
 	 
     @Override
     public void onTestSuccess(ITestResult tr) {
-    System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName() +"... VIDEO: "+tr.getTestContext().getAttribute("video_url")+"... SCREEN SHOT: "+tr.getTestContext().getAttribute("screenshot_url"));
-    	  	  
+    if(tr.getTestContext().getCurrentXmlTest().getParameter("record-video").equalsIgnoreCase("True")){
+    System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName() +"... VIDEO: "+tr.getTestContext().getAttribute("video_url"));
+    } else {
+    System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName() +"... SCREEN SHOT: "+tr.getTestContext().getAttribute("screenshot_url"));	  	
+    }
     }
     
   	 

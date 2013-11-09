@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="tests" thread-count="2" preserve-order="false">
+<suite name="Suite" parallel="tests" thread-count="2">
   <listeners>
     <listener class-name="demo.CustomListener" />
   </listeners>
   
-  
- <test name="Test ie10 windows 7">
-  <parameter name="test-title"  value="ie 10"/>
+   <test name="Test ie10 windows 7 no video">
+  <parameter name="test-title"  value="ie 10 no video"/>
   <parameter name="browser-name"  value="internet explorer"/>
   <parameter name="platform-name"  value="WIN7"/>
   <parameter name="browser-version-name"  value="10"/>
+  <parameter name="record-video"  value="False"/>
+   <classes> 
+      <class name="demo.test" />   
+    </classes>
+  </test>  
+    
+
+   <test name="Test chrome windows 7 no video">
+  <parameter name="test-title"  value="chrome no video"/>
+  <parameter name="browser-name"  value="chrome"/>
+  <parameter name="platform-name"  value="WIN7"/>
+  <parameter name="browser-version-name"  value=""/>
+  <parameter name="record-video"  value="False"/>
+   <classes> 
+      <class name="demo.test" />   
+    </classes>
+  </test>
+  
+  
+ <test name="Test ie10 windows 7 with video">
+  <parameter name="test-title"  value="ie 10 with video"/>
+  <parameter name="browser-name"  value="internet explorer"/>
+  <parameter name="platform-name"  value="WIN7"/>
+  <parameter name="browser-version-name"  value="10"/>
+  <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
@@ -17,11 +41,12 @@
  
    
 
-   <test name="Test chrome windows 7">
+   <test name="Test chrome windows 7 with video">
   <parameter name="test-title"  value="chrome"/>
-  <parameter name="browser-name"  value="chrome"/>
+  <parameter name="browser-name"  value="chrome with video"/>
   <parameter name="platform-name"  value="WIN7"/>
   <parameter name="browser-version-name"  value=""/>
+  <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
