@@ -8,7 +8,7 @@
   <parameter name="test-title"  value="ie 10 no video"/>
   <parameter name="browser-name"  value="internet explorer"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version-name"  value="10"/>
+  <parameter name="browser-version"  value="10"/>
   <parameter name="record-video"  value="False"/>
    <classes> 
       <class name="demo.test" />   
@@ -20,7 +20,7 @@
   <parameter name="test-title"  value="chrome no video"/>
   <parameter name="browser-name"  value="chrome"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version-name"  value=""/>
+  <parameter name="browser-version"  value=""/>
   <parameter name="record-video"  value="False"/>
    <classes> 
       <class name="demo.test" />   
@@ -32,7 +32,7 @@
   <parameter name="test-title"  value="ie 10 with video"/>
   <parameter name="browser-name"  value="internet explorer"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version-name"  value="10"/>
+  <parameter name="browser-version"  value="10"/>
   <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
@@ -42,10 +42,10 @@
    
 
    <test name="Test chrome windows 7 with video">
-  <parameter name="test-title"  value="chrome"/>
-  <parameter name="browser-name"  value="chrome with video"/>
+  <parameter name="test-title"  value="chrome with video"/>
+  <parameter name="browser-name"  value="chrome"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version-name"  value=""/>
+  <parameter name="browser-version"  value=""/>
   <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
