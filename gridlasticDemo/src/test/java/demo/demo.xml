@@ -4,8 +4,8 @@
     <listener class-name="demo.CustomListener" />
   </listeners>
   
-   <test name="Test ie10 windows 7 no video">
-  <parameter name="test-title"  value="ie 10 no video"/>
+   <test name="Test ie10 windows 7 with screenshot">
+  <parameter name="test-title"  value="ie 10 with screenshot"/>
   <parameter name="browser-name"  value="internet explorer"/>
   <parameter name="platform-name"  value="WIN7"/>
   <parameter name="browser-version"  value="10"/>
@@ -13,22 +13,20 @@
    <classes> 
       <class name="demo.test" />   
     </classes>
-  </test>  
-    
+  </test>      
 
-   <test name="Test chrome windows 7 no video">
-  <parameter name="test-title"  value="chrome no video"/>
-  <parameter name="browser-name"  value="chrome"/>
-  <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version"  value=""/>
+   <test name="Test ie10 windows 8 with screenshot">
+  <parameter name="test-title"  value="ie 10 with screenshot"/>
+  <parameter name="browser-name"  value="internet explorer"/>
+  <parameter name="platform-name"  value="WIN8"/>
+  <parameter name="browser-version"  value="10"/>
   <parameter name="record-video"  value="False"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
-  </test>
-  
-  
- <test name="Test ie10 windows 7 with video">
+  </test> 
+
+   <test name="Test ie10 windows 7 with video">
   <parameter name="test-title"  value="ie 10 with video"/>
   <parameter name="browser-name"  value="internet explorer"/>
   <parameter name="platform-name"  value="WIN7"/>
@@ -37,21 +35,17 @@
    <classes> 
       <class name="demo.test" />   
     </classes>
-  </test>  
- 
-   
+  </test>      
 
-   <test name="Test chrome windows 7 with video">
-  <parameter name="test-title"  value="chrome with video"/>
-  <parameter name="browser-name"  value="chrome"/>
-  <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version"  value=""/>
+   <test name="Test ie10 windows 8 with video">
+  <parameter name="test-title"  value="ie 10 with video"/>
+  <parameter name="browser-name"  value="internet explorer"/>
+  <parameter name="platform-name"  value="WIN8"/>
+  <parameter name="browser-version"  value="10"/>
   <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
-  </test>
-  
- 
-  
+  </test> 
+   
 </suite>

@@ -83,7 +83,7 @@ public class test {
 			driver.findElement(By.linkText("Posts"));				
 			
 			
-			//Take screen shot
+			//Take example screen shot
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";		
 			String screenshot_filename = "screenshot_" + ((RemoteWebDriver) driver).getSessionId() + ".png";
 			myTestContext.setAttribute("screenshot_url", targetURL+":8080/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename); 
