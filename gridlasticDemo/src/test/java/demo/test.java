@@ -32,9 +32,9 @@ public class test {
 	 private RemoteWebDriver driver;	 
 	 ITestContext myTestContext;
 		 
-		@Parameters({ "browser-name", "platform-name", "browser-version-name", "hub","videoUrl" })
+		@Parameters({ "browser-name", "platform-name", "browser-version-name", "hub","videoUrl", "record-video" })
 		@BeforeMethod(alwaysRun = true)
-		public void beforeMethod(String browser_name, String platform_name, String browser_version_name, String hub, String videoURL,ITestContext myTestContext) throws Exception {	
+		public void beforeMethod(String browser_name, String platform_name, String browser_version_name, String hub, String videoURL, String record_video,ITestContext myTestContext) throws Exception {	
 				
 			DesiredCapabilities capabilities = new DesiredCapabilities();				
 			if (platform_name.equalsIgnoreCase("win7")) {
@@ -45,7 +45,13 @@ public class test {
 			}			
 			capabilities.setBrowserName(browser_name);		
 			capabilities.setVersion(browser_version_name);				
+			
+			//video record
+			if (record_video.equalsIgnoreCase("True")){
 			capabilities.setCapability("video", "True");	
+			} else {
+			capabilities.setCapability("video", "False");
+			}
 		
 	        this.driver = new RemoteWebDriver(
 	                new URL(hub),
