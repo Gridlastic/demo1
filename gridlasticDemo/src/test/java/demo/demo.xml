@@ -4,44 +4,44 @@
     <listener class-name="demo.CustomListener" />
   </listeners>
   
-   <test name="Test ie10 windows 7 with screenshot">
-  <parameter name="test-title"  value="ie 10 with screenshot"/>
-  <parameter name="browser-name"  value="internet explorer"/>
+   <test name="Test ff22 on windows 7 with screenshot">
+  <parameter name="test-title"  value="firefox 22 with screenshot"/>
+  <parameter name="browser-name"  value="firefox"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version"  value="10"/>
+  <parameter name="browser-version"  value="22"/>
   <parameter name="record-video"  value="False"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
   </test>      
 
-   <test name="Test ie10 windows 8 with screenshot">
-  <parameter name="test-title"  value="ie 10 with screenshot"/>
-  <parameter name="browser-name"  value="internet explorer"/>
+   <test name="Test ff22 on windows 8 with screenshot">
+  <parameter name="test-title"  value="firefox 22 with screenshot"/>
+  <parameter name="browser-name"  value="firefox"/>
   <parameter name="platform-name"  value="WIN8"/>
-  <parameter name="browser-version"  value="10"/>
+  <parameter name="browser-version"  value="22"/>
   <parameter name="record-video"  value="False"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
   </test> 
 
-   <test name="Test ie10 windows 7 with video">
-  <parameter name="test-title"  value="ie 10 with video"/>
-  <parameter name="browser-name"  value="internet explorer"/>
+     <test name="Test ff22 on windows 7 with video">
+  <parameter name="test-title"  value="firefox 22 with video"/>
+  <parameter name="browser-name"  value="firefox"/>
   <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version"  value="10"/>
+  <parameter name="browser-version"  value="22"/>
   <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
     </classes>
   </test>      
 
-   <test name="Test ie10 windows 8 with video">
-  <parameter name="test-title"  value="ie 10 with video"/>
-  <parameter name="browser-name"  value="internet explorer"/>
+   <test name="Test ff22 on windows 8 with video">
+  <parameter name="test-title"  value="firefox 22 with video"/>
+  <parameter name="browser-name"  value="firefox"/>
   <parameter name="platform-name"  value="WIN8"/>
-  <parameter name="browser-version"  value="10"/>
+  <parameter name="browser-version"  value="22"/>
   <parameter name="record-video"  value="True"/>
    <classes> 
       <class name="demo.test" />   
