@@ -3,6 +3,7 @@ package demo;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.codec.binary.Base64;
@@ -14,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -31,20 +33,26 @@ public class test {
  
 	 private RemoteWebDriver driver;	 
 	 ITestContext myTestContext;
+	 DesiredCapabilities capabilities;
 		 
 		@Parameters({ "browser-name", "platform-name", "browser-version", "hub","videoUrl", "record-video" })
 		@BeforeMethod(alwaysRun = true)
 		public void beforeMethod(String browser_name, String platform_name, String browser_version, String hub, String videoURL, String record_video,ITestContext myTestContext) throws Exception {	
-				
-			DesiredCapabilities capabilities = new DesiredCapabilities();				
+			
+			
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments(Arrays.asList("--disable-extensions","--disable-logging"));
+			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+	
 			if (platform_name.equalsIgnoreCase("win7")) {
 				capabilities.setPlatform(Platform.VISTA);
 			}
 			if (platform_name.equalsIgnoreCase("win8")) {
 				capabilities.setPlatform(Platform.WIN8);
-			}			
-			capabilities.setBrowserName(browser_name);		
-			capabilities.setVersion(browser_version);				
+			}
+			
+		
 			
 			//video record
 			if (record_video.equalsIgnoreCase("True")){
