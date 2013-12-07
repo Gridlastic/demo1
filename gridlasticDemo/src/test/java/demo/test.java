@@ -106,6 +106,7 @@ public class test {
 	   
 	    @AfterMethod(alwaysRun = true)
 	    public void tearDown() throws Exception {
+	    System.out.println("@teataDown....");
 	    driver.quit();	    	
 	    }
 	    
