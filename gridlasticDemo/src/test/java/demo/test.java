@@ -41,7 +41,7 @@ public class test {
 			
 			
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments(Arrays.asList("--disable-extensions","--disable-logging"));
+			options.addArguments(Arrays.asList("--disable-extensions","--disable-logging","--test-type"));
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 	
@@ -95,7 +95,7 @@ public class test {
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";		
 			String screenshot_filename = "screenshot_" + ((RemoteWebDriver) driver).getSessionId() + ".png";
 			myTestContext.setAttribute("screenshot_url", targetURL+":8080/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename); 
-			take_screenshot(screenshot_filepath+screenshot_filename);	
+			//take_screenshot(screenshot_filepath+screenshot_filename);	
 			
 			if(!driver.getPageSource().contains("Dashboard") ){
 				Assert.assertTrue(false, test_title);	
