@@ -112,9 +112,7 @@ public class test {
 	    
 	    
 	    private void take_screenshot(String file) throws Exception {
-	    	WebDriver augmentedDriver = new Augmenter().augment(driver);
-			TakesScreenshot ss = (TakesScreenshot) augmentedDriver;
-			String base64Screenshot = ss.getScreenshotAs(OutputType.BASE64);
+	 		String base64Screenshot = driver.getScreenshotAs(OutputType.BASE64);
 			byte[] decodedScreenshot = Base64.decodeBase64(base64Screenshot.getBytes());
 			FileOutputStream fos = new FileOutputStream(new File(file));
 			fos.write(decodedScreenshot);
