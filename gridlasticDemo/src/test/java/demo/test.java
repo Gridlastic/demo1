@@ -90,13 +90,7 @@ public class test {
 			driver.findElement(By.id("wp-submit")).click();			
 			driver.findElement(By.linkText("Posts"));				
 			
-			
-			//Take example screen shot
-			String screenshot_filepath = System.getenv("WORKSPACE")+"/";		
-			String screenshot_filename = "screenshot_" + ((RemoteWebDriver) driver).getSessionId() + ".png";
-			myTestContext.setAttribute("screenshot_url", targetURL+":8080/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename); 
-			take_screenshot(screenshot_filepath+screenshot_filename);	
-			
+						
 			if(!driver.getPageSource().contains("Dashboard") ){
 				Assert.assertTrue(false, test_title);	
 				}
@@ -111,13 +105,5 @@ public class test {
 	    
 	    
 	    
-	    private void take_screenshot(String file) throws Exception {
-	    	WebDriver augmentedDriver = new Augmenter().augment(driver);
-			TakesScreenshot ss = (TakesScreenshot) augmentedDriver;
-			String base64Screenshot = ss.getScreenshotAs(OutputType.BASE64);
-			byte[] decodedScreenshot = Base64.decodeBase64(base64Screenshot.getBytes());
-			FileOutputStream fos = new FileOutputStream(new File(file));
-			fos.write(decodedScreenshot);
-			fos.close();
-	    }	
+	
 }
