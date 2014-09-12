@@ -4,29 +4,7 @@
     <listener class-name="demo.CustomListener" />
   </listeners>
   
-   <test name="Test chrome on windows 7 with screenshot">
-  <parameter name="test-title"  value="chrome with screenshot"/>
-  <parameter name="browser-name"  value="chrome"/>
-  <parameter name="platform-name"  value="WIN7"/>
-  <parameter name="browser-version"  value=""/>
-  <parameter name="record-video"  value="False"/>
-   <classes> 
-      <class name="demo.test" />   
-    </classes>
-  </test>      
-
-   <test name="Test chrome on windows 8 with screenshot">
-  <parameter name="test-title"  value="chrome with screenshot"/>
-  <parameter name="browser-name"  value="chrome"/>
-  <parameter name="platform-name"  value="WIN8"/>
-  <parameter name="browser-version"  value=""/>
-  <parameter name="record-video"  value="False"/>
-   <classes> 
-      <class name="demo.test" />   
-    </classes>
-  </test> 
-
-       <test name="Test chrome on windows 7 with video">
+  <test name="Test chrome on windows 7 with video">
   <parameter name="test-title"  value="chrome with video"/>
   <parameter name="browser-name"  value="chrome"/>
   <parameter name="platform-name"  value="WIN7"/>
