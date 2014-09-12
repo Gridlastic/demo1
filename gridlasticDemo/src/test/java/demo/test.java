@@ -40,7 +40,11 @@ public class test {
 		public void beforeMethod(String browser_name, String platform_name, String browser_version, String hub, String videoURL, String record_video,ITestContext myTestContext) throws Exception {	
 			
 			
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments(Arrays.asList("--disable-extensions","--disable-logging","--test-type"));
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+	
 			if (platform_name.equalsIgnoreCase("win7")) {
 				capabilities.setPlatform(Platform.VISTA);
 			}
