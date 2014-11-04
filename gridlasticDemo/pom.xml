@@ -43,8 +43,6 @@
            <systemPropertyVariables>
             <hub>${hub}</hub>
             <videoUrl>${videoUrl}</videoUrl>
-            <targetUrl>${targetUrl}</targetUrl>
-            <targetPasswd>${targetPasswd}</targetPasswd>
           </systemPropertyVariables>
         </configuration>
       </plugin>

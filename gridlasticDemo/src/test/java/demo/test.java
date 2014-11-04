@@ -16,8 +16,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-
-
+// Notes: hub and videoURL parameter is passed in from Jenkins maven job like:
+// GOAL: test -Dhub=http://53YOotZpYNKdKrSRvUvKBd4e5ujPCohx:h5cwp1MdFnhfE0X0KiAcmvgiQqYiE5FM@6T9DOVV93KLAE2HR.gridlastic.com:4444/wd/hub -DvideoUrl=https://s3-ap-southeast-2.amazonaws.com/b2729248-ak68-6948-a2y8-80e7479te16a/9ag7b09j-6a38-58w2-bb01-17qw724ce46t
+// You will find these parameters in your Gridlastic dashboard after starting your selenium grid
 public class test {
  
 	 private RemoteWebDriver driver;	 
@@ -50,6 +51,7 @@ public class test {
 			capabilities.setCapability("video", "False");
 			}
 		
+		
 	        this.driver = new RemoteWebDriver(
 	                new URL(hub),
 	                capabilities);
@@ -66,22 +68,13 @@ public class test {
 	  		
 		}
 		
-		@Parameters({"test-title","targetUrl","targetPasswd"})  
+		@Parameters({"test-title"})  
 		@Test
-		   public void test_login(String test_title, String targetURL, String targetPasswd,ITestContext myTestContext) throws Exception  { 	
-	    	driver.get(targetURL+"/wordpress");
-			driver.findElement(By.linkText("Log in")).click();
-			WebElement element = driver.findElement(By.id("user_login"));
-			Thread.sleep(500);
-			element.sendKeys("demo");
-			driver.findElement(By.id("user_pass")).sendKeys(targetPasswd);
-			driver.findElement(By.id("wp-submit")).click();			
-			driver.findElement(By.linkText("Posts"));				
-			
-						
-			if(!driver.getPageSource().contains("Dashboard") ){
-				Assert.assertTrue(false, test_title);	
-				}
+		   public void test_site(String test_title, ITestContext myTestContext) throws Exception  { 	
+			driver.get("http://www.java.com");
+			driver.findElementByLinkText("About Java").click();
+			driver.findElementByLinkText("Troubleshoot Java").click();
+			driver.findElementByLinkText("Support");	
 	    }
 	    
 			
