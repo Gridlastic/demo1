@@ -43,6 +43,7 @@
            <systemPropertyVariables>
             <hub>${hub}</hub>
             <videoUrl>${videoUrl}</videoUrl>
+            <jenkinsHostname>${jenkinsHostname}</jenkinsHostname>
           </systemPropertyVariables>
         </configuration>
       </plugin>
