@@ -18,12 +18,13 @@ public class CustomListener extends TestListenerAdapter{
         log(tr.getName()+ "--Test method skipped\n");
     }
 	 
+    
     @Override
     public void onTestSuccess(ITestResult tr) {
     if(tr.getTestContext().getCurrentXmlTest().getParameter("record-video").equalsIgnoreCase("True")){
     System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName() +"... VIDEO: "+tr.getTestContext().getAttribute("video_url"));
     } else {
-    System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName());	  	
+    System.out.println("SUCCESS: " + tr.getTestContext().getCurrentXmlTest().getParameter("test-title")+ " " +tr.getTestContext().getCurrentXmlTest().getParameter("platform-name") + " TEST METHOD: "+tr.getMethod().getMethodName() +"... SCREEN SHOT: "+tr.getTestContext().getAttribute("screenshot_url"));
     }
     }
     
