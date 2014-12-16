@@ -101,7 +101,7 @@ public class test {
 			// Take example screenshot and save it to Jenkins workspace
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";
 			String screenshot_filename = "screenshot_" + ((RemoteWebDriver) driver).getSessionId() + ".png";
-			myTestContext.setAttribute("screenshot_url", jenkins_hostname+":8080/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename);
+			myTestContext.setAttribute("screenshot_url", jenkins_hostname+"/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename);
 			take_screenshot(screenshot_filepath+screenshot_filename); 
 	    }
 	    
