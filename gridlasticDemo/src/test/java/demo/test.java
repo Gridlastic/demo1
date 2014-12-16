@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import org.apache.commons.codec.binary.Base64;
+import org.openqa.selenium.By;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -37,26 +39,31 @@ public class test {
 		public void beforeMethod(String browser_name, String platform_name, String browser_version, String hub, String videoURL, String record_video,ITestContext myTestContext) throws Exception {	
 			
 			
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments(Arrays.asList("--start-maximized"));
-			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-	
+			DesiredCapabilities capabilities = new DesiredCapabilities();	
+			capabilities.setBrowserName(browser_name);		
+			capabilities.setVersion(browser_version);
+			
 			if (platform_name.equalsIgnoreCase("win7")) {
 				capabilities.setPlatform(Platform.VISTA);
 			}
 			if (platform_name.equalsIgnoreCase("win8")) {
 				capabilities.setPlatform(Platform.WIN8);
-			}
+			}	
 			if (platform_name.equalsIgnoreCase("win8_1")) {
 				capabilities.setPlatform(Platform.WIN8_1);
 			}
 			if (platform_name.equalsIgnoreCase("linux")) {
 				capabilities.setPlatform(Platform.LINUX);
-			}			
+			}
+	
 			
-		
+			if (browser_name.equalsIgnoreCase("chrome")){
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(Arrays.asList("--start-maximized"));
+				capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+				} 
 			
+				
 			//video recording
 			if (record_video.equalsIgnoreCase("True")){
 			capabilities.setCapability("video", "True");	
@@ -85,15 +92,16 @@ public class test {
 		@Parameters({"test-title","jenkinsHostname"})  
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
-			driver.get("http://www.java.com");
-			driver.findElementByLinkText("About Java").click();
-			driver.findElementByLinkText("Troubleshoot Java").click();
-			driver.findElementByLinkText("Support");
+			driver.get("http://www.google.com");
+			WebElement element = driver.findElement(By.name("q"));
+	        element.sendKeys("food");
+	        element.submit();
+	        driver.findElement(By.linkText("Next"));
 			
 			// Take example screenshot and save it to Jenkins workspace
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";
 			String screenshot_filename = "screenshot_" + ((RemoteWebDriver) driver).getSessionId() + ".png";
-			myTestContext.setAttribute("screenshot_url", jenkins_hostname+"/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename);
+			myTestContext.setAttribute("screenshot_url", jenkins_hostname+":8080/job/"+System.getenv("JOB_NAME")+"/ws/"+screenshot_filename);
 			take_screenshot(screenshot_filepath+screenshot_filename); 
 	    }
 	    
