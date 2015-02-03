@@ -27,6 +27,7 @@ import org.testng.annotations.Test;
 // Notes: hub and videoURL parameter is passed in from Jenkins maven job like:
 // GOAL: test -Dhub=http://USERNAME:USER_KEY@SUBDOMAIN.gridlastic.com:80/wd/hub -DvideoUrl=https://s3-ap-southeast-2.amazonaws.com/b2729248-ak68-6948-a2y8-80e7479te16a/9ag7b09j-6a38-58w2-bb01-17qw724ce46t
 // You will find these parameters in your Gridlastic dashboard after starting your selenium grid
+// Also, the Jenkins hostname is passed in via -DjenkinsHostname from Jenkins maven job
 
 public class test {
  
@@ -96,7 +97,7 @@ public class test {
 			WebElement element = driver.findElement(By.name("q"));
 	        element.sendKeys("food");
 	        element.submit();
-	        driver.findElement(By.linkText("Next"));
+	        Thread.sleep(5000);
 			
 			// Take example screenshot and save it to Jenkins workspace
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";
