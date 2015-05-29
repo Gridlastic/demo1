@@ -93,7 +93,7 @@ public class test {
 		@Parameters({"test-title","jenkinsHostname"})  
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
-			driver.get("http://www.google.com");
+			driver.get("https://www.google.com/ncr");
 			WebElement element = driver.findElement(By.name("q"));
 	        element.sendKeys("food");
 	        element.submit();
