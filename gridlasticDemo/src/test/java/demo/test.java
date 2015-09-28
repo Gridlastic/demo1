@@ -1,11 +1,13 @@
 package demo;
 
 import org.openqa.selenium.remote.Augmenter;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
 import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -43,7 +46,7 @@ public class test {
 			DesiredCapabilities capabilities = new DesiredCapabilities();	
 			capabilities.setBrowserName(browser_name);		
 			capabilities.setVersion(browser_version);
-			
+						
 			if (platform_name.equalsIgnoreCase("win7")) {
 				capabilities.setPlatform(Platform.VISTA);
 			}
@@ -60,7 +63,12 @@ public class test {
 			
 			if (browser_name.equalsIgnoreCase("chrome")){
 				ChromeOptions options = new ChromeOptions();
+				// On LINUX the "start-maximized" Chrome option does not expand browser window to max screen size.
+				if (platform_name.equalsIgnoreCase("linux")) {
+				options.addArguments(Arrays.asList("--window-size=1920,1080"));	
+				} else {
 				options.addArguments(Arrays.asList("--start-maximized"));
+				}
 				capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 				} 
 			
@@ -78,8 +86,14 @@ public class test {
 	                new URL(hub),
 	                capabilities);
 	        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 
-			
-	  
+	       
+	        // On LINUX/FIREFOX the "driver.manage().window().maximize()" option does not expand browser window to max screen size.
+	    	if (platform_name.equalsIgnoreCase("linux") && browser_name.equalsIgnoreCase("firefox")) {
+	    		driver.manage().window().setSize(new Dimension(1920, 1080));	
+	    	}
+	        
+	        
+	        
 	  		// VIDEO URL
 	        if(capabilities.getCapability("video").equals("True")){
 	        myTestContext.setAttribute("video_url", videoURL+"/play.html?" + ((RemoteWebDriver) driver).getSessionId()); 
@@ -95,7 +109,7 @@ public class test {
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
 			driver.get("https://www.google.com/ncr");
 			WebElement element = driver.findElement(By.name("q"));
-	        element.sendKeys("food");
+	        element.sendKeys("webdriver");
 	        element.submit();
 	        Thread.sleep(5000);
 			
