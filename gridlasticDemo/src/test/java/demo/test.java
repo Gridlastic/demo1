@@ -108,6 +108,7 @@ public class test {
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
 			driver.get("https://www.google.com/ncr");
+			Thread.sleep(10000); //slow down for demo purposes
 			WebElement element = driver.findElement(By.name("q"));
 	        element.sendKeys("webdriver");
 	        element.submit();
