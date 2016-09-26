@@ -65,8 +65,8 @@ public class test {
 				ChromeOptions options = new ChromeOptions();
 				// On LINUX the "start-maximized" Chrome option does not expand browser window to max screen size.
 				if (platform_name.equalsIgnoreCase("linux")) {
+				options.addArguments(Arrays.asList("--window-position=0,0"));
 				options.addArguments(Arrays.asList("--window-size=1920,1080"));	
-				options.addArguments("no-sandbox");
 				} else {
 				options.addArguments(Arrays.asList("--start-maximized"));
 				}
