@@ -56,6 +56,9 @@ public class test {
 			if (platform_name.equalsIgnoreCase("win8_1")) {
 				capabilities.setPlatform(Platform.WIN8_1);
 			}
+			if (platform_name.equalsIgnoreCase("win10")) {
+				capabilities.setPlatform(Platform.WIN10);
+			}
 			if (platform_name.equalsIgnoreCase("linux")) {
 				capabilities.setPlatform(Platform.LINUX);
 			}
