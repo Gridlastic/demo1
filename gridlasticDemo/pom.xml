@@ -1,4 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <properties>
+   <seleniumVersion>2.53.1</seleniumVersion>
+</properties>
     <repositories>
       <repository>
       <id>central</id>
@@ -18,18 +21,18 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.7</version>
+			<version>6.9.10</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.53.1</version>
+			<version>${seleniumVersion}</version>
 		</dependency>
 		 <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
 	</dependencies>
@@ -37,10 +40,10 @@
 	<plugins>
    <plugin>
 		<artifactId>maven-compiler-plugin</artifactId>
-		<version>2.3.2</version>
+		<version>3.5.1</version>
 		<configuration>
-			<source>1.7</source>
-			<target>1.7</target>
+			<source>1.8</source>
+			<target>1.8</target>
 		</configuration>
 	</plugin>
       <plugin>
