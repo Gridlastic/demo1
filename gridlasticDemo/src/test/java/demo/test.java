@@ -66,6 +66,8 @@ public class test {
 			
 			if (browser_name.equalsIgnoreCase("chrome")){
 				ChromeOptions options = new ChromeOptions();
+				options.addArguments("disable-infobars"); // starting from Chrome 57 the info bar displays with "Chrome is being controlled by automated test software."
+				
 				// On LINUX the "start-maximized" Chrome option does not expand browser window to max screen size.
 				if (platform_name.equalsIgnoreCase("linux")) {
 				options.addArguments(Arrays.asList("--window-position=0,0"));
