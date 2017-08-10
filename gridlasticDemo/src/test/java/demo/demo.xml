@@ -16,6 +16,7 @@
 		</classes>
 	</test>
 	
+	
 	<test name="Test chrome on windows 8 with screenshot">
 		<parameter name="test-title" value="chrome with screenshot" />
 		<parameter name="browser-name" value="chrome" />
