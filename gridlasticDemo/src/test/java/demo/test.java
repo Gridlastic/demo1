@@ -49,15 +49,19 @@ public class test {
 						
 			if (platform_name.equalsIgnoreCase("win7")) {
 				capabilities.setPlatform(Platform.VISTA);
+				capabilities.setCapability("platformName", "windows"); //required from selenium version 3.9.1 when testing with firefox or IE. Required when testing with Chrome 77+.
 			}
 			if (platform_name.equalsIgnoreCase("win8")) {
 				capabilities.setPlatform(Platform.WIN8);
+				capabilities.setCapability("platformName", "windows"); //required from selenium version 3.9.1 when testing with firefox or IE. Required when testing with Chrome 77+.
 			}	
 			if (platform_name.equalsIgnoreCase("win8_1")) {
 				capabilities.setPlatform(Platform.WIN8_1);
+				capabilities.setCapability("platformName", "windows"); //required from selenium version 3.9.1 when testing with firefox or IE. Required when testing with Chrome 77+.
 			}
 			if (platform_name.equalsIgnoreCase("win10")) {
 				capabilities.setPlatform(Platform.WIN10);
+				capabilities.setCapability("platformName", "windows"); //required from selenium version 3.9.1 when testing with firefox or IE. Required when testing with Chrome 77+.
 			}
 			if (platform_name.equalsIgnoreCase("linux")) {
 				capabilities.setPlatform(Platform.LINUX);
