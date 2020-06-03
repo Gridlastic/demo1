@@ -28,7 +28,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 // Notes: hub and videoURL parameter is passed in from Jenkins maven job like:
-// GOAL: test -Dhub=http://USERNAME:USER_KEY@SUBDOMAIN.gridlastic.com:80/wd/hub -DvideoUrl=https://s3-ap-southeast-2.amazonaws.com/b2729248-ak68-6948-a2y8-80e7479te16a/9ag7b09j-6a38-58w2-bb01-17qw724ce46t
+// GOAL: test -Dhub=https://USERNAME:ACCESS_KEY@HUB_SUBDOMAIN.gridlastic.com/wd/hub -DvideoUrl=https://s3-ap-southeast-2.amazonaws.com/b2729248-ak68-6948-a2y8-80e7479te16a/9ag7b09j-6a38-58w2-bb01-17qw724ce46t
 // You will find these parameters in your Gridlastic dashboard after starting your selenium grid
 // Also, the Jenkins hostname is passed in via -DjenkinsHostname from Jenkins maven job
 
@@ -70,12 +70,11 @@ public class test {
 			
 			if (browser_name.equalsIgnoreCase("chrome")){
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments("disable-infobars"); // starting from Chrome 57 the info bar displays with "Chrome is being controlled by automated test software."
 				
 				// On LINUX the "start-maximized" Chrome option does not expand browser window to max screen size.
 				if (platform_name.equalsIgnoreCase("linux")) {
 				options.addArguments(Arrays.asList("--window-position=0,0"));
-				options.addArguments(Arrays.asList("--window-size=1920,1080"));	
+				options.addArguments(Arrays.asList("--window-size=1840,1080"));	// starting with Chrome version 83, use width of 1840 instead of 1920 to capture the entire webpage on video recording.
 				} else {
 				options.addArguments(Arrays.asList("--start-maximized"));
 				}
