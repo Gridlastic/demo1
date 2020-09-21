@@ -116,7 +116,7 @@ public class test {
 		@Parameters({"test-title","jenkinsHostname"})  
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
-			driver.get("https://www.google.com/ncr");
+			driver.get("https://www.google.com/?gl=us&hl=en&gws_rd=cr&pws=0");
 			Thread.sleep(10000); //slow down for demo purposes
 			WebElement element = driver.findElement(By.name("q"));
 	        element.sendKeys("webdriver");
