@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite" parallel="tests" thread-count="5">
+<suite name="Suite" parallel="tests" thread-count="2">
 	<listeners>
 		<listener class-name="demo.CustomListener" />
 	</listeners>
 
-	<test name="Test chrome on windows 7 with screenshot">
+	<!-- <test name="Test chrome on windows 7 with screenshot">
 		<parameter name="test-title" value="chrome with screenshot" />
 		<parameter name="browser-name" value="chrome" />
 		<parameter name="platform-name" value="WIN7" />
@@ -37,7 +37,7 @@
 		<classes>
 			<class name="demo.test" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<test name="Test chrome on windows 10 with screenshot">
 		<parameter name="test-title" value="chrome with screenshot" />
@@ -61,7 +61,7 @@
 		</classes>
 	</test>
 
-	<test name="Test chrome on windows 7 with video">
+	<!-- <test name="Test chrome on windows 7 with video">
 		<parameter name="test-title" value="chrome with video" />
 		<parameter name="browser-name" value="chrome" />
 		<parameter name="platform-name" value="WIN7" />
@@ -92,7 +92,7 @@
 		<classes>
 			<class name="demo.test" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<test name="Test chrome on windows 10 with video">
 		<parameter name="test-title" value="chrome with video" />
