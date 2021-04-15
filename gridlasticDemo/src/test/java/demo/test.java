@@ -116,12 +116,8 @@ public class test {
 		@Parameters({"test-title","jenkinsHostname"})  
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
-			driver.get("https://www.google.com/?gl=us&hl=en&gws_rd=cr&pws=0");
+			driver.get("https://www.gridlastic.com/?demo");
 			Thread.sleep(10000); //slow down for demo purposes
-			WebElement element = driver.findElement(By.name("q"));
-	        element.sendKeys("webdriver");
-	        element.submit();
-	        Thread.sleep(5000);
 			
 			// Take example screenshot and save it to Jenkins workspace
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";
