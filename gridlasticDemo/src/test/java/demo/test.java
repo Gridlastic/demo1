@@ -116,8 +116,9 @@ public class test {
 		@Parameters({"test-title","jenkinsHostname"})  
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
+			Thread.sleep(5000); //slow down for demo purposes
 			driver.get("https://www.gridlastic.com/?demo");
-			Thread.sleep(10000); //slow down for demo purposes
+			Thread.sleep(5000); //slow down for demo purposes
 			
 			// Take example screenshot and save it to Jenkins workspace
 			String screenshot_filepath = System.getenv("WORKSPACE")+"/";
