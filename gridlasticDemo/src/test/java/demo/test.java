@@ -117,7 +117,7 @@ public class test {
 		@Test
 		   public void test_site(String test_title, String jenkins_hostname, ITestContext myTestContext) throws Exception  { 	
 			driver.get("data:text/html,<h1>GRIDLASTIC SELENIUM GRID DEMO</h1>");
-			Thread.sleep(5000); //slow down for demo purposes
+			Thread.sleep(15000); //slow down for demo purposes
 			driver.get("https://www.gridlastic.com/?demo");
 			Thread.sleep(5000); //slow down for demo purposes
 			
